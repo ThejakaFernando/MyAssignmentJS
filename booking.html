@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Grand Bliss, Sri Lanka Holidays, Adventures in Sri Lanka">
+    <link rel="stylesheet" href="styling.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" 
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Linking JavaScript File -->
+    <script src="main.js" defer> </script>
+
+    <title> Booking </title>
+
+</head>
+<body>
+    <header class="header">
+
+        <!-- Navigation Section -->
+
+        <nav>
+            <a href="home.html"> <img src="GrandBliss.png" alt="grandbliss"></a>
+            <div class="nav-links">
+                <ul>
+                    <li> <a href="index.html"> Home </a></li>
+                    <li> <a href="locations.html"> Locations </a></li>
+                    <li> <a href="adventures.html"> Adventures </a></li>
+                    <li> <a href="restaurants.html"> Restaurants </a></li>
+                    <li> <a href="booking.html"> Booking </a></li>
+                </ul>
+            </div>
+        </nav>
+            <div class="text-box">
+                <h1> The Grand Bliss Moments </h1>
+                <p> Breakout from the everyday life and relax in a comfortable and adventurous getaway. 
+                    The Grand Bliss Moments has been designed to pamper our guests with comfort, luxury, 
+                    and adventure blended with our unique guest services for an unforgettable 
+                    holiday experience. </p>   
+            </div>
+    </header>
+
+    <!-- Hotel Booking (Left Container) -->
+    <div class="left-container">
+    <section class="body-form">
+    <div class="container3"> 
+        <div class="title"> Book your hotel room now! </div> <br>
+        <p> We invite you to experience the perfect blend of relaxation and sophistication. 
+            Your dream stay is just a few clicks away. Book your hotel room now and embark 
+            on an unforgettable journey with us. </p>
+        <form action="booking.html">
+            <div class="user-details">
+
+                <div class="input-box">
+                    <span class="details"> Full Name </span>
+                    <input type="text" id="fullName" placeholder="Enter your name" required>    
+                </div>
+
+                <div class="input-box">
+                    <span class="details"> Country </span>
+                    <input type="text" id="country" placeholder="Enter your country" required>    
+                </div>
+
+                <div class="input-box">
+
+                    <div class="input-box">
+                        <span class="details"> Hotel Branch </span>
+                        <select class="combobox" id = "hotelType" name="hotelType">
+                            <option> Hotel Branch </option>
+                            <option> Grand Bliss Mountains </option>
+                            <option> Grand Bliss Sea </option>
+                            <option> Grand Bliss Lake </option>
+                        </select>  
+                    </div>
+                    <div class="input-box">
+                        <span class="details"> Check-in Date </span>
+                        <input id="checkInDate "type="date" required>  
+                    </div> 
+                    <div class="input-box">
+                        <span class="details"> Check-out Date </span>
+                        <input id="checkOutDate" type="date" required>  
+                    </div>
+
+                    
+                        <span class="details"> Room Type </span>
+                        <input type="radio" id="roomType" name="roomType" value="Single">
+                        <label for="single">Single</label> 
+                    
+                        <input type="radio" id="roomType" name="roomType" value="Double">
+                        <label for="double">Double</label>
+                    
+                        <input type="radio" id="roomType" name="roomType" value="Triple">
+                        <label for="triple">Triple</label> <br> <br>
+
+
+                    <label class ="children1" for="numOfRooms">Number of Rooms </label>
+                    <input type="number" id="numOfRooms" name="numOfRooms" min="1" value="1"> 
+
+
+                    <label class ="children1" for="children">Number of Children:</label>
+                    <input type="number" id="children" name="children" min="0" value="0">
+
+                    <label class ="adults1" for="children">Number of Adults:</label>
+                    <input type="number" id="adults" name="adults" min="0" value="0">
+                    
+                </div>
+            </div>
+                    <label>Extra Requirements: (Optional) </label> <br> <br>
+
+                    <p>
+                        <label> Wi-Fi </label>
+                        <input type="checkbox" name="extraRequirements" id="wiFi" value="wiFi">
+                    </p>
+                    <p>
+                        <label > Pool View </label>
+                        <input type="checkbox" name="extraRequirements" id="poolView" value="poolView">
+                    </p>
+                    <p>
+                        <label > Garden View </label>
+                        <input type="checkbox" name="extraRequirements" id="gardenView" value="gardenView">
+                    </p>
+                    <p>
+                        <label > Extra Bed </label>
+                        <input type="checkbox" name="extraRequirements" id="extraBed" value="extraBed">
+                    </p> <br>
+                
+                <label> Do you have a kid(s) above 5 year's old? (Optional) </label> <br> <br>
+
+                <p>
+                    <label> Yes </label> 
+                    <input type="checkbox" name="kidCost" id="yesKidCost" value="yesKidCost">
+                </p>
+
+                <div class="user-details">
+                    <div class="input-box">
+                        <span class="details"> Enter Promo Code (Optional) </span>
+                        <input type="text" id="promo" placeholder="Enter Promo Code" >    
+                    </div>
+                </div> 
+
+                
+                
+                <!-- Cost of the current bookings(s) section -->
+
+                <fieldset class="fieldset1">
+                <legend> Cost of Current Booking(s) </legend> 
+                    <p id="currentCost">  0 </p>
+                </fieldset>
+
+                <div class="container-buttons">
+                    <button id="checkLoyaltyBtn"> Check Loyalty </button>
+                    <button id="addToFavouritesBtn"> Add To Favourites </button>
+                </div> <br>
+
+                <div class="loyaltyPoints">
+                    <label for="loyaltyPoints"> Loyalty Points: </label>
+                    <span id="loyaltyPointsResult"> </span>
+                </div> <br>
+                
+                <div class="button">
+                    <input type="submit" id="hotelBtn" value="Book Hotel">
+                </div>
+                <p id="output1"> </p>
+            
+                
+        </div>
+            
+            </section>
+        </form> 
+        </div>
+    
+
+        <!-- Adventure Booking Container (right)  -->
+        <div class="right-container">
+            <section class="body-form">
+            <div class="container3"> 
+                <div class="title"> Adventure Booking </div> <br>
+                <p> Make use of our booking services to go on thrilling adventures! 
+                    Come and experience a variety of activities that are sure to make your heart race. </p>
+                <form action="booking.html">
+                    <div class="user-details">
+                        <div class="input-box">
+                            <span class="details"> Full Name </span>
+                            <input type="text" id ="fullNameAdventure" placeholder="Enter your name" required>    
+                        </div>
+                        
+
+                        <div class="input-box">
+                            <span class="details"> Country </span>
+                            <input type="text" id="countryAdventure" placeholder="Enter your country" required>    
+                        </div>
+
+                        
+
+                        <div class="input-box">
+                            <span class="details"> Adventure Type </span>
+                            <select class="combobox" name="adventureType" id="adventureType">
+                                <option> Adventure Type </option>
+                                <option> Diving </option>
+                            </select>  <br>
+
+                        <label class ="children1" for="children">Number of Children:</label>
+                        <input type="number" id="childrenAdventure" name="children" min="0" value="0">
+
+                        <label class ="adults1" for="children">Number of Adults:</label>
+                        <input type="number" id="adultsAdventure" name="adults" min="0" value="0">
+                    </div>
+                
+                    
+                    </div>
+                            <label> If in need for a guide during the diving session, please tick the below box/boxes (Optional) </label> <br> <br>
+        
+                                <input type="checkbox" id="adultCheckbox" name="guideRequirementsCost" value="adultGuideCost">
+                                <label for="yes"> Adult </label> <br>
+        
+                                <input type="checkbox" id="kidCheckbox" name="guideRequirementsCost" value="kidGuideCost">
+                                <label for="no"> Kid</label> <br>
+                        
+                        <div class="container-buttons">
+                            <button id="addToFavouritesAdventureBtn"> Add To Favourites </button>
+                        </div> 
+                        
+                        <div class="button">
+                            <input type="submit" id="adventureBtn" value="Book Adventure">
+                        </div>
+
+
+                        <fieldset class="fieldset2">
+                            <legend> Cost of Current Booking(s) </legend> 
+                                <p id="currentAdventureCost">  0 </p>
+                        </fieldset> <br>
+
+                        
+
+                    <p id="output2"> </p> <br>
+        
+                </div>
+                </section>
+                </div>
+            </form> 
+            </div>
+        </body>
+        
+        <!-- Footer Section -->
+        <footer>
+            <div class="container1">
+                <div class="footer-content">
+                    <h3>Contact Us</h3>
+                    <p>Email:grandblis@hotels.com</p>
+                    <p>Phone:+94 349 394349</p>
+                </div>
+                <div class="footer-content">
+                    <h3>Quick Links</h3>
+                     <ul class="list">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="locations.html">Locations</a></li>
+                        <li><a href="adventures.html">Adventures</a></li>
+                        <li><a href="restaurants.html">Restaurants</a></li>
+                        <li><a href="book.html"> Book Now </a> </li>
+                    </ul>
+    
+                </div>
+
+                <div class="footer-content">
+                    <h3>Follow Us</h3>
+                    <ul class="social-icons">
+                     <li><a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a></li>
+                     <li><a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                     <li><a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                     <li><a href=""><i class="fab fa-linkedin"></i></a></li>
+                    </ul>
+                    </div>
+            </div>
+            <div class="bottom-bar">
+                <p>&copy; 2023 Grand Bliss . All rights reserved.</p>
+            </div>
+        </footer>
+    </body>
+</html>
+
