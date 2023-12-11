@@ -53,7 +53,7 @@
             <div class="user-details">
 
                 <div class="input-box">
-                    <span class="details"> Full Name </span>
+                    <span class="details"> Full Name <span class="red"> * </span> </span>
                     <input type="text" id="fullName" placeholder="Enter your name" required>    
                 </div>
 
@@ -65,7 +65,7 @@
                 <div class="input-box">
 
                     <div class="input-box">
-                        <span class="details"> Hotel Branch </span>
+                        <span class="details"> Hotel <span class="red">* </span> </span>
                         <select class="combobox" id = "hotelType" name="hotelType">
                             <option> Hotel Branch </option>
                             <option> Grand Bliss Mountains </option>
@@ -73,17 +73,14 @@
                             <option> Grand Bliss Lake </option>
                         </select>  
                     </div>
-                    <div class="input-box">
-                        <span class="details"> Check-in Date </span>
-                        <input id="checkInDate "type="date" required>  
-                    </div> 
-                    <div class="input-box">
-                        <span class="details"> Check-out Date </span>
-                        <input id="checkOutDate" type="date" required>  
-                    </div>
-
                     
-                        <span class="details"> Room Type </span>
+                    <label for="checkInDate"> Check-In Date <span class="red"> * </span> </label>
+                        <input type="date" id="checkInDate"> <br> <br>
+
+                    <label for="checkOutDate"> Check-Out Date <span class="red"> * </span> </label>
+                        <input type="date" id="checkOutDate"> <br> <br>
+                    
+                        <span class="details"> Room Type <span class="red"> * </span> </span>
                         <input type="radio" id="roomType" name="roomType" value="Single">
                         <label for="single">Single</label> 
                     
@@ -181,20 +178,20 @@
                 <form action="booking.html">
                     <div class="user-details">
                         <div class="input-box">
-                            <span class="details"> Full Name </span>
+                            <span class="details"> Full Name <span class="red"> * </span> </span>
                             <input type="text" id ="fullNameAdventure" placeholder="Enter your name" required>    
                         </div>
                         
 
                         <div class="input-box">
-                            <span class="details"> Country </span>
+                            <span class="details"> Country <span class="red"> * </span> </span>
                             <input type="text" id="countryAdventure" placeholder="Enter your country" required>    
                         </div>
 
                         
 
                         <div class="input-box">
-                            <span class="details"> Adventure Type </span>
+                            <span class="details"> Adventure Type <span class="red"> * </span> </span>
                             <select class="combobox" name="adventureType" id="adventureType">
                                 <option> Adventure Type </option>
                                 <option> Diving </option>

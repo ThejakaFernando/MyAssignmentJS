@@ -894,21 +894,6 @@ form .button input:hover {
     padding-bottom: 7px;
 }
 
-/* Booking form @media classes
-
-.left-container
-.body-form
-container3
-.user-details
-.input-box
-details
-.fieldset1
-.container-buttons
-button
-.right-container
-fieldset2 */
-
-
 /* Media query for booking page section */
 
 @media only screen and (max-width: 758px) {
@@ -952,6 +937,10 @@ fieldset2 */
     }
 }
 
+/* asterick in labels */
+.red {
+    color: red;
+}
 
 
 

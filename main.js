@@ -5,6 +5,8 @@ const nameInput = document.getElementById("fullName");
 const countryInput = document.getElementById("country");
 const hotelTypeInput = document.getElementById("hotelType");
 const numOfRoomsInput = document.getElementById("numOfRooms");
+var dateCheckIn = document.getElementById("checkInDate");
+var dateCheckOut = document.getElementById("checkOutDate");
 var roomTypeInput = document.getElementsByName("roomType");
 const childrenInput = document.getElementById("children");
 const adultsInput = document.getElementById("adults");
@@ -99,6 +101,20 @@ function finalizeBooking(event) {
 
         }
     
+    // Duration of Days
+    var customerCheckIn = new Date(dateCheckIn.value);
+    var customerCheckOut = new Date(dateCheckOut.value);
+
+    if(customerCheckOut <= customerCheckIn) {
+        window.alert("Sorry, but check-out date must be later than check-in date!");
+        return;
+    }
+
+    var durationMs = customerCheckOut - customerCheckIn;
+
+    var durationDays = durationMs / (1000 * 60 * 60 * 24);
+
+    
     numOfRooms = numOfRoomsInput.value;
     numOfChildren = childrenInput.value;
     numOfAdults = adultsInput.value;
@@ -124,6 +140,7 @@ function finalizeBooking(event) {
     window.alert(`${name}'s Hotel Booking Details are Displayed Below.
     Country : ${country}
     Hotel :  ${selectedHotel}
+    Duration : ${durationDays} days
     Room Type : ${hotelRoom}
     Number of Rooms : ${numOfRooms}
     Number of Children : ${numOfChildren}
@@ -131,14 +148,18 @@ function finalizeBooking(event) {
 
 
     outputText1.innerText = ` Dear ${name}, \n
-    Your reservation at ${selectedHotel} has been confirmed. Please find your details below. 
+    Your reservation at ${selectedHotel} has been confirmed. Please find your reservation details below. \n
     Number of Rooms : ${numOfRooms}
+    Check-In Date : ${customerCheckIn}
+    Duration of Stay : ${durationDays} days
     Total Cost : LKR ${adjustedTotalCost} `
 
     // Values are set to 0 after 'Book Hotel' button is clicked.
     nameInput.value = "";
     countryInput.value = "";
     hotelTypeInput.value = "Hotel Branch";
+    dateCheckIn.value = "";
+    dateCheckOut.value = "";
 
     for (var i=0; i<roomTypeInput.length; i++) {
         roomTypeInput[i].checked = false;
@@ -325,10 +346,21 @@ function bookingFavourite (event) {
 
     event.preventDefault();
 
-    window.alert(`You added this booking as a favourite!`);
     const customerName = nameInput.value;
     const customerCountry = countryInput.value;
     const customerHotel = hotelTypeInput.options[hotelTypeInput.selectedIndex].value;
+
+    var customerCheckIn = new Date(dateCheckIn.value);
+    var customerCheckOut = new Date(dateCheckOut.value);
+
+    if(customerCheckOut <= customerCheckIn) {
+        window.alert("Sorry, but check-out date must be later than check-in date!");
+        return;
+    }
+
+    var durationMs = customerCheckOut - customerCheckIn;
+
+    var durationDays = durationMs / (1000 * 60 * 60 * 24);
 
     var customerRoom = "";
     for (var i = 0; i < roomTypeInput.length; i++) {
@@ -342,11 +374,13 @@ function bookingFavourite (event) {
     const customerChildren = childrenInput.value;
     const customerAdults = adultsInput.value;
 
+    window.alert(`You added this booking as a favourite!`);
 
 
     const userHotelBooking = {
         name : customerName,
         country : customerCountry,
+        durationOfStay : durationDays + " days",
         hotel : customerHotel,
         roomType : customerRoom,
         numOfRooms : numberOfRooms1,
